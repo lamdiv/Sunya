@@ -3,6 +3,7 @@ import SearchFilters from "./components/SearchFilters";
 import SearchResults from "./components/SearchResults";
 
 import {useState} from 'react'
+import AnalyzedFile from "./components/AnalyzedFile";
 
 
 
@@ -80,7 +81,8 @@ function App() {
       <SearchFilters handleFileSubmission={handleFileSubmission} />
       <hr className="mt-5" />
       <div className="container mx-auto mt-10">
-        <SearchResults searchArr={searchArr}/>
+        <AnalyzedFile />
+        {/* <SearchResults searchArr={searchArr}/> */}
         
       </div>
 
