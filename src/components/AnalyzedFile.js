@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchItem from './SearchItem'
 
+
 function AnalyzedFile() {
     return (
         <div>
@@ -14,15 +15,6 @@ function AnalyzedFile() {
             <h1 className='leading-8'>
                 This is lorem epsum
             </h1>
-                {/* <ul className='mt-2 text-sm font-[600] text-primary flex space-x-2'>
-                    language
-                    word frequency
-                    text summarize
-                    
-                    <li>Laura Dennis,</li>
-                    <li>Andrea Spaeth,</li>
-                    <li>Namni Goel</li>
-                </ul> */}
                 <div>
                 <div className='flex items-center mt-6 text-sm'>
                     Language Detected :
@@ -45,7 +37,7 @@ function AnalyzedFile() {
             <div className='mt-10'>
                 <h1 className="text-xl font-[600]">Similar Documents</h1>
 
-                {/* Search Items */}
+                {/* Similar Items */}
                 {/* <SearchItem /> */}
 
             </div>

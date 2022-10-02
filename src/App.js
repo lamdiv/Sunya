@@ -82,8 +82,8 @@ function App() {
       <SearchFilters handleFileSubmission={handleFileSubmission} />
       <hr className="mt-5" />
       <div className="container mx-auto mt-10">
-        <AnalyzedFile />
-        {/* <SearchResults searchArr={searchArr}/> */}
+        {/* <AnalyzedFile /> */}
+        <SearchResults searchArr={searchArr}/>
         
       </div>
 

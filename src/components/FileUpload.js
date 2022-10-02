@@ -101,8 +101,9 @@ function FileUpload({ handleFileSubmission }) {
       ) : (
         <p className="w-full h-min border-2 p-4 mt-4 mb-4">No File Selected</p>
       )}
-      <div>
-        <select id="keywords">
+      <div className='mb-5'>
+		Select Keyword
+        <select className='mt-2 outline-none border-2 border-primary p-1 rounded text-primary' id="keywords">
           {optionsMapping}
         </select>
       </div>
