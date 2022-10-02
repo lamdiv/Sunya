@@ -17,13 +17,17 @@ function SearchItem({ item }) {
       let keywords = [];
 
       if (item.keywords != undefined) {
-        const keys = item.keywords[0].split(" ");
-        console.log(keys);
-        keywords = keys.map((itm) => (
-          <li className="bg-primary text-white px-3 py-1 rounded-full">
+        
+        if(item.keywords[0] != undefined){
+
+            const keys = item.keywords[0].split(" ");
+            
+            keywords = keys.map((itm) => (
+                <li className="bg-primary text-white px-3 py-1 rounded-full">
             {itm}
           </li>
         ));
+        }
       } 
 
 
