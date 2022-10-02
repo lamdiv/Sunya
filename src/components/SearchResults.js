@@ -2,7 +2,7 @@ import Dropdown from '../asset/Dropdown.svg'
 import SearchItem from './SearchItem'
 import {useEffect, useState} from 'react'
 
-function SearchResults({searchArr}) {
+function SearchResults({term, searchArr}) {
 
 
      
@@ -13,7 +13,7 @@ function SearchResults({searchArr}) {
             <div className="flex w-2/3 justify-between">
                 <div>
                     <h1 className="text-xl font-[600]">Search Results</h1>
-                    <h3 className="text-sm font-medium mt-3">Processed phrase <span className=" text-primary">"this is search phrase"</span></h3>
+                    <h3 className="text-sm font-medium mt-3">Processed phrase <span className=" text-primary">{term}</span></h3>
                 </div>
                 <div className='flex rounded-[50px] w-max h-min px-3 py-2 space-x-3'>
                     {/* <p>Sort by</p> */}

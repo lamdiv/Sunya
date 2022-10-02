@@ -14,6 +14,7 @@ function App() {
         
         const [isFileAnalyzed, setFileAnalyzed] = useState(false)
 
+        const [term, setTerm ] = useState();
         const reqOptions = (data) => { return {
 
           method: "POST",
@@ -43,10 +44,11 @@ function App() {
 
 
          async function handleSearch(e) {
+
            setFileAnalyzed(false);
            e.preventDefault();
            const inpData = e.target.searchtext.value;
-
+            setTerm(inpData)
            fetch(
              "https://nasa-spaceapp-inference.herokuapp.com/fetch_listings",
              reqOptions({
@@ -89,7 +91,7 @@ function App() {
       <div className="container mx-auto mt-10">
         { isFileAnalyzed ?
         <AnalyzedFile response={analyzedResponse} />
-        :<SearchResults searchArr={searchArr}/> 
+        :<SearchResults term={term} searchArr={searchArr}/> 
       }
 
         
