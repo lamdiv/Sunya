@@ -11,7 +11,9 @@ import AnalyzedFile from "./components/AnalyzedFile";
 function App() {
   
         const [searchArr, setSearchArr] = useState([]);
-         
+        
+        const [isFileAnalyzed, setFileAnalyzed] = useState(false)
+
         const reqOptions = (data) => { return {
 
           method: "POST",
@@ -41,6 +43,7 @@ function App() {
 
 
          async function handleSearch(e) {
+           setFileAnalyzed(false);
            e.preventDefault();
            const inpData = e.target.searchtext.value;
 
@@ -59,14 +62,17 @@ function App() {
              });
          } 
 
+         const [analyzedResponse, setAnalyzedResponse] = useState();
+
          async function handleFileSubmission(form){
           
+
           fetch(
             "https://nasa-spaceapp-inference.herokuapp.com/analyze_file?keyword_label="+form[1].value,
             multiPartOptions(new FormData(form))
           )
-            .then((req) =>req.json())
-            .then((res) => console.log(res));
+            .then((req) => req.json())
+            .then((res) =>{console.log(res); setAnalyzedResponse(res);setFileAnalyzed(true); });
          }
 
 //  page: {
@@ -81,8 +87,10 @@ function App() {
       <SearchFilters handleFileSubmission={handleFileSubmission} />
       <hr className="mt-5" />
       <div className="container mx-auto mt-10">
-        <AnalyzedFile />
-        {/* <SearchResults searchArr={searchArr}/> */}
+        { isFileAnalyzed ?
+        <AnalyzedFile response={analyzedResponse} />
+        :<SearchResults searchArr={searchArr}/> 
+      }
         
       </div>
 
