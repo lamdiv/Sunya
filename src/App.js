@@ -11,19 +11,14 @@ function App() {
         const reqOptions = (data) => { return {
 
           method: "POST",
+          // mode: "no-cors",
           headers: {
             "User-Agent":
             "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0",
-            Accept: "application/json",
-            "Accept-Language": "en-US,en;q=0.5",
-            Referer: "https://ntrs.nasa.gov/search",
-            Origin: "https://ntrs.nasa.gov",
-            Connection: "keep-alive",
-            "Sec-Fetch-Dest": "empty",
-            "Sec-Fetch-Mode": "cors",
-            "Sec-Fetch-Site": "same-origin",
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: 
+          JSON.stringify({"request_params": JSON.stringify(data)}),
         };
       }
 
@@ -31,22 +26,26 @@ function App() {
            e.preventDefault();
            const inpData = e.target.searchtext.value;
 
-           fetch("https://ntrs.nasa.gov/api/citations/search", reqOptions({
-             page: {
-               size: 25,
-               from: 25,
-             },
-             highlight: true,
-           }))
+           fetch(
+             "https://k1eup5.deta.dev/fetch_listings",
+             reqOptions({
+              
+               title: inpData,
+             })
+           )
              .then((res) => res.json())
              .then((res) => {
                console.log(res);
-               return ([{ title: "Hello" }]);
+               setSearchArr(res);
              });
          } 
 
 
-
+//  page: {
+//                  size: 25,
+//                  from: 25,
+//                },
+//                highlight: true,
 
   return (
     <div className="font-inter">
