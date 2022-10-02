@@ -19,11 +19,13 @@ function AnalyzedFile({response}) {
         <li className="text-primary font-bold">{itm[0]} </li>
       ));
     }
+
     return (
         <div>
             <h1 className="text-xl font-[600]">Analyzed Result</h1>
-        
+
             <div className='w-full mt-5 p-4 border-2 border-gray-300 rounded-lg'>
+
             <h1 className='text-lg text-primary font-[600] leading-8'>
                 Summary
             </h1>
@@ -53,22 +55,22 @@ function AnalyzedFile({response}) {
                     <ul className='flex space-x-2 ml-4'>
                       {words}
                     </ul>
+
                 </div>
-                </div>
-               
-              
+
+
 
             </div>
 
             <div className='mt-10'>
                 <h1 className="text-xl font-[600]">Similar Documents</h1>
 
-                {/* Search Items */}
+                {/* Similar Items */}
                 {/* <SearchItem /> */}
 
             </div>
         </div>
-        
+                </div>
     )
 }
 

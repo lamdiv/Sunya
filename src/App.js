@@ -91,6 +91,7 @@ function App() {
         <AnalyzedFile response={analyzedResponse} />
         :<SearchResults searchArr={searchArr}/> 
       }
+
         
       </div>
 
