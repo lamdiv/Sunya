@@ -1,8 +1,14 @@
 import Dropdown from '../asset/Dropdown.svg'
 import SearchItem from './SearchItem'
+import {useEffect, useState} from 'react'
 
-function SearchResults() {
-    return (
+function SearchResults({searchArr}) {
+
+
+     
+     const searchItems = searchArr.map(itm => <SearchItem item={itm} /> )
+    
+     return (
         <>
             <div className="flex w-2/3 justify-between">
                 <div>
@@ -23,9 +29,8 @@ function SearchResults() {
             </div>
             <div className='flex gap-5 mt-5 mb-5 w-full'>
                 <div className="w-2/3 space-y-5">
-                    <SearchItem />
-                    <SearchItem />
-                    <SearchItem />
+                    {/* <SearchItem item={debugObj}/> */}
+                    {searchItems}
                 </div>
                 <div className='w-1/3 h-min p-4 border-2 border-gray-300 rounded-lg'>
                     <p className='text-xl font-medium'>Summary</p></div>

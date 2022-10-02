@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 
-function SearchItem() {
+function SearchItem({item}) {
+
+   
+    // const authors = item.authors.map()
     return (
         <div className='w-full  p-4 border-2 border-gray-300 rounded-lg'>
             <h1 className='text-xl font-[600] leading-8'>
-                Phenotypic Stability Of Energy Balance Responses To Experimental Total Sleep Deprivation And Sleep Restriction In
+                {item.title}
             </h1>
             <ul className='mt-2 text-sm font-[600] text-primary flex space-x-2'>
+                
                 <li>Laura Dennis,</li>
                 <li>Andrea Spaeth,</li>
                 <li>Namni Goel</li>
