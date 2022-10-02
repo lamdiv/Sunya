@@ -29,7 +29,7 @@ function App() {
         const multiPartOptions = (data) => { return {
 
           method: "POST",
-          mode: "no-cors",
+          // mode: "no-cors",
           headers: {
             "User-Agent":
             "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0",
@@ -65,9 +65,8 @@ function App() {
             "https://nasa-spaceapp-inference.herokuapp.com/analyze_file?keyword_label="+form[1].value,
             multiPartOptions(new FormData(form))
           )
-            .then((req) => req.json())
+            .then((req) =>req.json())
             .then((res) => console.log(res));
-
          }
 
 //  page: {

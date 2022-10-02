@@ -71,7 +71,7 @@ function SearchItem({ item }) {
                         <div
                             className='fixed inset-0 flex items-end sm:items-center justify-center sm:p-4'
                         >
-                            <Dialog.Panel className="w-1/2 bg-white w-full z-10 mx-auto p-4 backdrop-blur-lg  rounded-xl">
+                            <Dialog.Panel className="sm:max-w-sm bg-white w-full sm:w-[390px] z-10 mx-auto p-4 backdrop-blur-lg  rounded-xl">
                                 <div className="fixed">
                                     <div
                                         onClick={() => setIsOpen(false)}
@@ -98,7 +98,7 @@ function SearchItem({ item }) {
                                         Summary
                                     </h1>
                                     <h1 className='leading-8'>
-                                        This is lorem this is lorem this is lorem This is lorem this is lorem this is lorem This is lorem this is lorem this is lorem This is lorem this is lorem this is lorem 
+                                        This is lorem this is lorem this lThis is lorem this is lorem this lThis is lorem this is lorem this l
                                     </h1>
                                     <div>
                                         <div className='flex items-center mt-6 text-sm'>
