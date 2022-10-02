@@ -4,6 +4,9 @@ import SearchResults from "./components/SearchResults";
 
 import {useState} from 'react'
 
+
+
+
 function App() {
   
         const [searchArr, setSearchArr] = useState([]);
@@ -18,19 +21,34 @@ function App() {
             "Content-Type": "application/json",
           },
           body: 
-          JSON.stringify({"request_params": JSON.stringify(data)}),
+          JSON.stringify(data),
         };
       }
+        
+        const multiPartOptions = (data) => { return {
+
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "User-Agent":
+            "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0",
+            // "Content-Type": "multipart/form-data",
+          },
+          body: data ,
+        };
+      }
+
 
          async function handleSearch(e) {
            e.preventDefault();
            const inpData = e.target.searchtext.value;
 
            fetch(
-             "https://k1eup5.deta.dev/fetch_listings",
+             "https://nasa-spaceapp-inference.herokuapp.com/fetch_listings",
              reqOptions({
-              
-               title: inpData,
+               request_params: JSON.stringify({
+                 title: inpData,
+               }),
              })
            )
              .then((res) => res.json())
@@ -40,6 +58,16 @@ function App() {
              });
          } 
 
+         async function handleFileSubmission(form){
+          
+          fetch(
+            "https://nasa-spaceapp-inference.herokuapp.com/analyze_file?keyword_label="+form[1].value,
+            multiPartOptions(new FormData(form))
+          )
+            .then((req) => req.json())
+            .then((res) => console.log(res));
+
+         }
 
 //  page: {
 //                  size: 25,
@@ -50,7 +78,7 @@ function App() {
   return (
     <div className="font-inter">
       <Search handleSearch={handleSearch} />
-      <SearchFilters />
+      <SearchFilters handleFileSubmission={handleFileSubmission} />
       <hr className="mt-5" />
       <div className="container mx-auto mt-10">
         <SearchResults searchArr={searchArr}/>

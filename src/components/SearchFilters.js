@@ -5,7 +5,7 @@ import { Fragment, useState } from 'react';
 import FileUpload from './FileUpload';
 
 
-function SearchFilters() {
+function SearchFilters({handleFileSubmission}) {
     let [isOpen, setIsOpen] = useState(false);
     return (
         <div className='container flex items-center justify-between mx-auto mt-5'>
@@ -87,7 +87,7 @@ function SearchFilters() {
                                         </svg>
                                     </div>
                                 </div>
-                               <FileUpload />
+                               <FileUpload  handleFileSubmission={handleFileSubmission} />
                             </Dialog.Panel>
                         </div>
                     </Transition.Child>
