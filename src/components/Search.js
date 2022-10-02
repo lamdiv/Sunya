@@ -4,7 +4,7 @@ import SearchIcon from "../asset/SearchIcon.svg"
 
 function Search({handleSearch}) {
   return (
-          <form onSubmit={handleSearch} className="mx-auto w-full relative">
+      <form onSubmit={handleSearch} className="mx-auto w-full relative">
         <img src="https://cdn.pixabay.com/photo/2017/05/10/19/29/robot-2301646_960_720.jpg" alt="" className="w-full h-[25vh] object-cover object-middle" />
         <div className="flex space-x-5 items-center justify-between bg-white w-1/2 h-[80px] shadow-lg relative -mt-10 left-1/4 rounded-[50px] px-6 py-2">
 
@@ -14,7 +14,7 @@ function Search({handleSearch}) {
             Search
           </button>
         </div>
-          </form>
+      </form>
 
   )
 }
