@@ -28,12 +28,12 @@ function SearchResults({searchArr}) {
 
             </div>
             <div className='flex gap-5 mt-5 mb-5 w-full'>
-                <div className="w-2/3 space-y-5">
+                <div className="w-full space-y-5">
                     {/* <SearchItem item={debugObj}/> */}
                     {searchItems}
                 </div>
-                <div className='w-1/3 h-min p-4 border-2 border-gray-300 rounded-lg'>
-                    <p className='text-xl font-medium'>Summary</p></div>
+                {/* <div className='w-1/3 h-min p-4 border-2 border-gray-300 rounded-lg'>
+                    <p className='text-xl font-medium'>Summary</p></div> */}
             </div>
 
 
