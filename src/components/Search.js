@@ -15,6 +15,7 @@ function Search({handleSearch}) {
           </button>
         </div>
           </form>
+
   )
 }
 
