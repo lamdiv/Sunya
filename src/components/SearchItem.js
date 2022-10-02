@@ -58,7 +58,7 @@ function SearchItem({ item }) {
                     </a>
                 </div>
                 <div>
-                    <h3 className="text-sm mt-3">Published on <span className="text-md font-[600]">January 7, 2022</span></h3>
+                    <h3 className="text-sm mt-3">Published on <span className="text-md font-[600]">{item.created}</span></h3>
                 </div>
                 <h3 onClick={() => setIsOpen(true)} className="text-md font-bold mt-3 text-primary cursor-pointer">View Summary</h3>
             </div>
